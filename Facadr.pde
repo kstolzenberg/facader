@@ -106,6 +106,7 @@ class Door{
 
 class House{
   int x,y,w,h,x2,y2, x3, y3, x4, y4;
+  int caseNum;
   Window window;
   Door door;
   Lite lite;
@@ -131,19 +132,39 @@ class House{
     door.a = this.x+x3;
     door.b = this.y+y3;
     door.q = this.h-(door.b) + this.y;
-    door.r = this.y+this.h-5;      
+    door.r = this.y+this.h-5;
+    caseNum = int(random(0,3));    
   }
   
   void drawHouse(){
-    int z;
-    fill(190,105,49);
+    int z,u;
     strokeWeight(2);
     stroke(0);
+    fill(#BE6931);
     rect(x,y,w,h);
-    //siding
-    for(z=this.y; z<this.h+this.y;z+=10){
-      strokeWeight(.5);
-      line(this.x, z, this.x+this.w,z);
+    
+    ////siding :: switch cases for random styles have random # gen = caseNum
+    switch(caseNum){
+      case 1:
+        fill(#444444);
+        for(u=this.x; u<this.w+this.x;u+=5){
+          strokeWeight(.5);
+          line(u,this.y, u, this.y+this.h);
+        }
+        break;
+      case 2:
+        fill(#787878);
+         for(u=this.x; u<this.w+this.x;u+=20){
+          strokeWeight(.5);
+          line(u,this.y, u,this.y+this.h);
+        }
+        break;
+      default:
+         fill(#BE6931);
+         for(z=this.y; z<this.h+this.y;z+=10){
+          strokeWeight(.5);
+          line(this.x, z, this.x+this.w,z);
+        } 
     }
     
     window.drawWindow();
@@ -191,10 +212,10 @@ int [][] midpointGenerator(int [] point_1, int [] point_2, int count){
 }
 
 int [][] addMidpointsToShape(int[][]coords_for_shape){
-  coords_for_shape = (int[][])concat(coords_for_shape,midpointGenerator(coords_for_shape[0], coords_for_shape[1], 2));
-  coords_for_shape = (int[][])concat(coords_for_shape,midpointGenerator(coords_for_shape[1], coords_for_shape[3], 2));
-  coords_for_shape = (int[][])concat(coords_for_shape,midpointGenerator(coords_for_shape[0], coords_for_shape[2], 2));
-  coords_for_shape = (int[][])concat(coords_for_shape,midpointGenerator(coords_for_shape[2], coords_for_shape[3], 2));   
+  coords_for_shape = (int[][])concat(coords_for_shape,midpointGenerator(coords_for_shape[0], coords_for_shape[1], 3));
+  coords_for_shape = (int[][])concat(coords_for_shape,midpointGenerator(coords_for_shape[1], coords_for_shape[3], 3));
+  coords_for_shape = (int[][])concat(coords_for_shape,midpointGenerator(coords_for_shape[0], coords_for_shape[2], 3));
+  coords_for_shape = (int[][])concat(coords_for_shape,midpointGenerator(coords_for_shape[2], coords_for_shape[3], 3));   
   return coords_for_shape;
 }
 
