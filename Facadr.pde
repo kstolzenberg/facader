@@ -154,7 +154,8 @@ class House{
 
 
 void setup(){
-  size(975,1000);
+  size(1974,2299);
+  //smaller reduces the likelihood of edge case error!
   background(255);
   smooth();
 
@@ -263,8 +264,8 @@ boolean ShapeCollisionOneWay(int [][] coords_for_shape_A, int [][] coords_for_sh
 
 
 void drawArray(){
-  for (int i=0; i<height; i+=200){
-    for (int j=0; j<width; j+=200){
+  for (int i=0; i<height; i+=175){
+    for (int j=0; j<width; j+=150){
       
       pushMatrix();
       
