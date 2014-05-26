@@ -2,15 +2,48 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Façader - A Generative Tool for Architecture</title>
-	<link rel="stylesheet" type="text/css" href="style.css">>
+	<title>⌂ Façader ⌂</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		$(function() {
+			$( "#tabs" ).tabs();
+		});
+	</script>
 </head>
 
 <body>
+
 <header>
-<h1>Façader</h1>
-<h2></h2>>
+<h1> <a href="">Façader</a></h1>
+<h2>A Generative Tool for Architecture</h2>
 </header>
 
+<div id="tabs">
+	<ul id="navTabs">
+	<li><a href="#onload"></a></li>
+	<li><a href="#Examples">Examples</a></li>
+	<li><a href="#Github">Github</a></li>
+	<li><a href="#About">About</a></li>
+	</ul>
+
+	<div class="content">
+	<div id="onload"><p><img src="https://raw.githubusercontent.com/kstolzenberg/facader/gh-pages/boutput.gif"></p></div>
+	<div id="Examples">
+		<p>Up Close: <img src="https://raw.githubusercontent.com/kstolzenberg/facader/gh-pages/loutput0.jpg"></p>
+		<p><img src="https://raw.githubusercontent.com/kstolzenberg/facader/gh-pages/boutput0.jpg"> </p>
+	</div>
+	<div id="Github">
+		<p>See more at <a href="https://github.com/kstolzenberg/Facader">Github!</a></p>
+	</div>
+	<div id="About">
+		<p>Façader is a tool to rapidly evaluate quick studies of building elevations.  Façader is written in Processing and uses intelligent 2D objects with collision detection to create many combinations from several basic scenarios.</p>
+	</div>
+	</div>
+
+
+</div>
 
 </body>
+</html>

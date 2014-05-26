@@ -1,25 +1,91 @@
-
-header{
-	font-family: Helvetica;
-	font-weight: 400;	
-	font-size: 80px;
-	color:#e84e23;
-	float:left;
-}
-
-#links{
-	font-family: Helvetica;
-	font-weight: 400;	
-	font-size: 25px;
-	line-height:40px;
-	color:#e84e23;
-	float:left;
+#tabs { 
+	margin-left: 50px;
+	margin-top:50px;
+	position: relative;
+	line-height:30px;
+	vertical-align: baseline;
 }
 
 body{
-	font-family: Arial;
+	width:1200px;
+	margin: 0;
+	font-family: Helvetica;
+	font-weight: 300;	
 	font-size: 20px;
-	line-height:1.5;
 	color:#999999;
-	float:left;
+	border:none;
 }
+
+p{padding: 0; margin: 0; display: inline;}
+
+*:focus{outline: 0;}
+
+.ui-tabs-nav{
+	position:absolute;
+	overflow: hidden;
+	}
+
+
+.content{
+	position:relative;
+	display: inline-block;
+	margin-top:0px;
+	margin-left:175px;
+	height:100%;
+	width: 100%; 
+	overflow:hidden;
+	width:auto;
+	/*text-align: center;*/
+}
+
+/*.content img {width: 100%;}*/
+
+.content a:link {color:#999999; text-decoration:underline;}
+.content a:active{color:#999999; text-decoration:underline;}
+.content a:visited {color:#999999; text-decoration: none;}
+.content a:hover{color:#962f1a; text-decoration:underline;}
+
+
+header{
+	margin-top:50px;
+}
+h1{
+	margin-left:50px;
+	font-family: Helvetica;
+	font-weight: bold;	
+	display: inline;
+	font-size: 80px;
+	color:#e84e23;
+}
+h1 a:link{color:#e84e23; text-decoration: none;}
+h1 a:visited{color:#e84e23; text-decoration: none;}
+h1 a:hover{color:#962f1a; text-decoration: none;}
+h1 a:active{color:#e84e23; text-decoration: none;}
+
+h2{
+	font-family: Helvetica;
+	font-weight: 300;	
+	font-size: 25px;
+	color:#999999;
+	/*padding-left:25px;*/
+	display: inline;
+}
+
+#navTabs{
+	margin-top:0;
+	margin-bottom: 0;
+	padding:0;
+	font-family: Helvetica;
+	font-weight: bold;	
+	font-size: 25px;
+	color:#e84e23;
+}
+
+
+
+ul{list-style-type: none; list-style: none; display: inline-block;}
+ul li:first{display:none;}
+#navTabs a:active{color:#e84e23; text-decoration: none;}
+#navTabs a:link{color:#e84e23; text-decoration: none;}
+#navTabs a:visited{color:#e84e23; text-decoration: none;}
+#navTabs a:hover{color:#962f1a; text-decoration: none;}
