@@ -1,4 +1,5 @@
-//success! collision detection & matrix fully working!
+
+import processing.pdf.*;
 
 boolean Touching = false;
 boolean collision = true;
@@ -27,9 +28,9 @@ class Window{
     m = 2;
   }
   void drawWindow(){
-  stroke(0);
+  stroke(60);
   strokeWeight(1);
-  fill(68,68,68);
+  fill(100);
   rect(a,b,c,d);
   fill(191,248,250);
   rect(a+m, b+m, c-m*2, d-m*2);
@@ -53,9 +54,9 @@ class Lite{
     m = 2;
   }
   void drawLite(){
-  stroke(0);
+  stroke(60);
   strokeWeight(1);
-  fill(68,68,68);
+  fill(100);
   rect(a,b,c,d);
   fill(191,248,250);
   rect(a+m, b+m, c-m*2, d-m*2);
@@ -79,14 +80,14 @@ class Door{
   void drawDoor(){
     //stairs not being included in the object collision?
     fill(150,47,26);
-    stroke(0);
+    stroke(60);
     strokeWeight(1);
     rect(a,b,c,d);
     ellipse(a+m/2,b+d/2,2,2);
     fill(191,248,250);
     rect(a+m, b+m, c-m*2, d-m*2);
     //draw stairs
-    fill(68,68,68);
+    fill(100,100,100);
     float q=200;
     float r=250 ;
     //q = door at bottom, no stair, r = door at 1 step; both will get rewritten by the house objecy, stairs drawn btwn q and r
@@ -137,35 +138,36 @@ class House{
   }
   
   void drawHouse(){
-    int z,u;
+    int z,u, colorNum;
     strokeWeight(2);
-    stroke(0);
-    fill(#BE6931);
+    stroke(50);
+    colorNum = int(random(0,3));
+    color [] houseColor = {#e84e23, #998989, #bb730e};
+    fill(houseColor[colorNum]);
     rect(x,y,w,h);
     
     ////siding :: switch cases for random styles have random # gen = caseNum
     switch(caseNum){
       case 1:
-        fill(#444444);
         for(u=this.x; u<this.w+this.x;u+=5){
           strokeWeight(.5);
           line(u,this.y, u, this.y+this.h);
         }
         break;
       case 2:
-        fill(#787878);
          for(u=this.x; u<this.w+this.x;u+=20){
           strokeWeight(.5);
           line(u,this.y, u,this.y+this.h);
         }
         break;
       default:
-         fill(#BE6931);
          for(z=this.y; z<this.h+this.y;z+=10){
           strokeWeight(.5);
           line(this.x, z, this.x+this.w,z);
         } 
     }
+    
+    println(houseColor);
     
     window.drawWindow();
     door.drawDoor();     
@@ -175,11 +177,11 @@ class House{
 
 
 void setup(){
-  size(1974,2299);
-  //smaller reduces the likelihood of edge case error!
+  //size(1974,2299);
+  size(774,724);
   background(255);
   smooth();
-
+  beginRecord(PDF,"output.pdf");
 }
 
 void draw(){
@@ -325,11 +327,17 @@ void mouseReleased(){
   drawArray();
 }
 
+
 void keyPressed(){
   if (keyCode == ENTER){
     saveFrame("output"+l+".jpg");
    l = l+1;
   }
+  
+   if (keyCode == SHIFT){
+    endRecord();
+  }
+  
 }
 
 
