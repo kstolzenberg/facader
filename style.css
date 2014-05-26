@@ -1,0 +1,25 @@
+
+header{
+	font-family: Helvetica;
+	font-weight: 400;	
+	font-size: 80px;
+	color:#e84e23;
+	float:left;
+}
+
+#links{
+	font-family: Helvetica;
+	font-weight: 400;	
+	font-size: 25px;
+	line-height:40px;
+	color:#e84e23;
+	float:left;
+}
+
+body{
+	font-family: Arial;
+	font-size: 20px;
+	line-height:1.5;
+	color:#999999;
+	float:left;
+}
