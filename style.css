@@ -31,14 +31,13 @@ p{padding: 0; margin: 0; display: inline;}
 	display: inline-block;
 	margin-top:0px;
 	margin-left:175px;
-	height:100%;
 	width: 100%; 
 	overflow:hidden;
 	width:auto;
-	/*text-align: center;*/
 }
 
-/*.content img {width: 100%;}*/
+.content img {width: 100%;text-align: center;}
+.content p{display: block;margin-bottom:20px;}
 
 .content a:link {color:#999999; text-decoration:underline;}
 .content a:active{color:#999999; text-decoration:underline;}
@@ -67,8 +66,9 @@ h2{
 	font-weight: 300;	
 	font-size: 25px;
 	color:#999999;
-	/*padding-left:25px;*/
+	padding-left:25px;
 	display: inline;
+	
 }
 
 #navTabs{
