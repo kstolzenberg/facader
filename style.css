@@ -37,7 +37,8 @@ p{padding: 0; margin: 0; display: inline;}
 }
 
 .content img {width: 100%;text-align: center;}
-.tiny img {width: auto;}
+.tiny img {width: auto; display:inline;text-align: center;}
+.tiny {text-align: center;}
 .content p{display: block;margin-bottom:20px;}
 
 .content a:link {color:#999999; text-decoration:underline;}
