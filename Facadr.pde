@@ -18,7 +18,7 @@ int randRange(int min_val, int max_val, int step){
 }
 
 class Window{
-  int a, b, c, d, m;
+  int a, b, c, d, m; 
   //float x, y, width, height, margin;
   Window(){
     a = 200;
@@ -150,18 +150,21 @@ class House{
     switch(caseNum){
       case 1:
         for(u=this.x; u<this.w+this.x;u+=5){
+          stroke(80);
           strokeWeight(.5);
           line(u,this.y, u, this.y+this.h);
         }
         break;
       case 2:
          for(u=this.x; u<this.w+this.x;u+=20){
+          stroke(80);
           strokeWeight(.5);
           line(u,this.y, u,this.y+this.h);
         }
         break;
       default:
          for(z=this.y; z<this.h+this.y;z+=10){
+          stroke(80);
           strokeWeight(.5);
           line(this.x, z, this.x+this.w,z);
         } 
@@ -178,7 +181,9 @@ class House{
 
 void setup(){
   //size(1974,2299);
-  size(774,724);
+  //size(774,724);
+  size(2900,2000);
+  //size(5800,3999);
   background(255);
   smooth();
   beginRecord(PDF,"output.pdf");
